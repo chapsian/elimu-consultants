@@ -14,8 +14,9 @@ import ConsultationModal from './components/ConsultationModal';
 import { Tab, BookingFormState } from './types';
 import { ShieldAlert, BookOpen, Clock, Calendar, Check } from 'lucide-react';
 
-const HERO_IMAGE_PATH = new URL('./assets/images/african_academic_research_1785520489975.jpg', import.meta.url).href;
-const STATS_IMAGE_PATH = new URL('./assets/images/research_desk_statistics_1785520146804.jpg', import.meta.url).href;
+// High-quality, ultra-resilient Unsplash CDN images of Black scholars & academic research to guarantee Vercel build succeeds without local file dependencies
+const HERO_IMAGE_PATH = 'https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=1200&q=80'; // Black scholars/mentors collaborating with research books and computer
+const STATS_IMAGE_PATH = 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80'; // Academic research desk with books, thesis drafting, and statistics analysis
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState<Tab>('home');
