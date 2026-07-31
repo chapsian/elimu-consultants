@@ -236,6 +236,13 @@ export default function ContactView({ onOpenBooking }: ContactViewProps) {
           )}
         </div>
       </div>
+
+      {/* Compliance reminder footer style */}
+      <div className="p-4 bg-amber-50 rounded-xl border border-amber-200/60 mt-6">
+        <p className="text-xs text-slate-600 leading-relaxed text-center">
+          <strong>Academic Integrity Notice:</strong> Elimu Consultants provides educational coaching, statistical advice, methodology tutoring, and editing services only. We do not write, generate, or complete academic assignments, theses, or dissertations for students.
+        </p>
+      </div>
     </div>
   );
 }

@@ -14,9 +14,8 @@ import ConsultationModal from './components/ConsultationModal';
 import { Tab, BookingFormState } from './types';
 import { ShieldAlert, BookOpen, Clock, Calendar, Check } from 'lucide-react';
 
-// High-quality, ultra-resilient Unsplash CDN images of Black scholars & academic research to guarantee Vercel build succeeds without local file dependencies
-const HERO_IMAGE_PATH = 'https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=1200&q=80'; // Black scholars/mentors collaborating with research books and computer
-const STATS_IMAGE_PATH = 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80'; // Academic research desk with books, thesis drafting, and statistics analysis
+import HERO_IMAGE_PATH from './assets/images/african_academic_research_1785520489975.jpg';
+import STATS_IMAGE_PATH from './assets/images/research_desk_statistics_1785520146804.jpg';
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState<Tab>('home');
@@ -77,10 +76,10 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex items-center gap-2 text-center sm:text-left">
             <span className="inline-flex items-center px-1.5 py-0.5 rounded-sm bg-indigo-500/20 text-indigo-300 font-bold uppercase tracking-wider text-[9px]">
-              Support
+              Compliance
             </span>
             <span>
-              Professional Thesis Coaching, Statistics Help & Academic Proofreading
+              Academic Integrity Notice: We provide educational tutoring, coaching, & proofreading only. We do not write dissertations for students.
             </span>
           </div>
           <div className="flex items-center gap-4 text-slate-400 font-semibold">
