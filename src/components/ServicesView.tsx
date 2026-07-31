@@ -84,21 +84,6 @@ export default function ServicesView({ onOpenBooking, statisticsImageSrc }: Serv
         </div>
       </section>
 
-      {/* Compliance / Ethics Section */}
-      <section className="p-6 bg-rose-50 border border-rose-100 rounded-xl">
-        <div className="flex items-start gap-4">
-          <div className="p-2 bg-rose-100 text-rose-800 rounded-lg shrink-0 mt-0.5">
-            <AlertCircle className="w-5 h-5" />
-          </div>
-          <div className="space-y-1">
-            <h4 className="font-bold text-rose-900 text-sm">Academic Integrity Notice</h4>
-            <p className="text-xs text-rose-700 leading-relaxed font-medium">
-              Academic Integrity Notice: Elimu Consultants provides educational coaching, statistical advice, methodology tutoring, and editing services only. We do not write, generate, or complete academic assignments, theses, or dissertations for students.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Grid of Services and Image Section */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         {/* Left: The Services List */}

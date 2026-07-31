@@ -76,10 +76,10 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex items-center gap-2 text-center sm:text-left">
             <span className="inline-flex items-center px-1.5 py-0.5 rounded-sm bg-indigo-500/20 text-indigo-300 font-bold uppercase tracking-wider text-[9px]">
-              Compliance
+              Support
             </span>
             <span>
-              Academic Integrity Notice: We provide educational tutoring, coaching, & proofreading only. We do not write dissertations for students.
+              Professional Thesis Coaching, Statistics Help & Academic Proofreading
             </span>
           </div>
           <div className="flex items-center gap-4 text-slate-400 font-semibold">

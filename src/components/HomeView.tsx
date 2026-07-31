@@ -230,20 +230,6 @@ export default function HomeView({ onNavigate, onOpenBooking, heroImageSrc }: Ho
         </div>
       </section>
 
-      {/* Trust & Ethics Callout */}
-      <section className="max-w-3xl mx-auto px-4 text-center py-6 bg-amber-50 rounded-xl border border-amber-200/60">
-        <div className="flex flex-col sm:flex-row items-center gap-4 text-left">
-          <div className="p-2 bg-amber-100 rounded-lg text-amber-800">
-            <ShieldAlert className="w-6 h-6" />
-          </div>
-          <div>
-            <h4 className="font-semibold text-slate-900 text-sm">Academic Integrity Notice</h4>
-            <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-              Elimu Consultants provides educational coaching, statistical advice, methodology tutoring, and editing services only. We do not write, generate, or complete academic assignments, theses, or dissertations for students.
-            </p>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
