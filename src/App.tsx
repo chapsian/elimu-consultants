@@ -14,8 +14,8 @@ import ConsultationModal from './components/ConsultationModal';
 import { Tab, BookingFormState } from './types';
 import { ShieldAlert, BookOpen, Clock, Calendar, Check } from 'lucide-react';
 
-const HERO_IMAGE_PATH = '/src/assets/images/african_academic_research_1785520489975.jpg';
-const STATS_IMAGE_PATH = '/src/assets/images/research_desk_statistics_1785520146804.jpg';
+const HERO_IMAGE_PATH = new URL('./assets/images/african_academic_research_1785520489975.jpg', import.meta.url).href;
+const STATS_IMAGE_PATH = new URL('./assets/images/research_desk_statistics_1785520146804.jpg', import.meta.url).href;
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState<Tab>('home');
