@@ -73,6 +73,26 @@ export default function ConsultationModal({
 
     onBookSuccess(newBooking);
     setIsSubmitted(true);
+
+    // Forward booking details to noble.consultants@yahoo.com via mailto
+    const recipient = 'noble.consultants@yahoo.com';
+    const subject = encodeURIComponent(`New Consultation Request: ${formData.serviceNeeded} - ${formData.fullName}`);
+    const body = encodeURIComponent(
+      `New Consultation Request - Elimu Consultants\n` +
+      `-----------------------------------------\n` +
+      `Full Name: ${formData.fullName}\n` +
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone}\n` +
+      `Service Needed: ${formData.serviceNeeded}\n` +
+      `Message/Details: ${formData.message || 'None provided'}\n` +
+      `Date: ${newBooking.date}\n`
+    );
+    const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    try {
+      window.location.href = mailtoUrl;
+    } catch (err) {
+      console.error('Could not auto-open mail client:', err);
+    }
   };
 
   const handleReset = () => {
@@ -255,17 +275,35 @@ export default function ConsultationModal({
                     <CheckCircle className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-slate-900">Consultation Scheduled!</h4>
-                    <p className="text-slate-500 text-sm mt-1">
-                      Thank you, {formData.fullName}. We will reach out to you shortly via telephone (
-                      {formData.phone}) or email ({formData.email}) to coordinate our call regarding{' '}
-                      <strong>{formData.serviceNeeded}</strong>.
+                    <h4 className="text-xl font-bold text-slate-900">Consultation Request Submitted!</h4>
+                    <p className="text-slate-600 text-sm mt-1">
+                      Thank you, {formData.fullName}. Your booking details for <strong>{formData.serviceNeeded}</strong> have been recorded and forwarded to <strong>noble.consultants@yahoo.com</strong>.
                     </p>
                   </div>
-                  <div className="pt-4">
+                  <div className="bg-indigo-50 border border-indigo-100 rounded-lg p-3 text-xs text-indigo-900 text-left space-y-1">
+                    <p className="font-semibold">Forwarded Details Summary:</p>
+                    <p>• <strong>Client:</strong> {formData.fullName} ({formData.phone} | {formData.email})</p>
+                    <p>• <strong>Service:</strong> {formData.serviceNeeded}</p>
+                    {formData.message && <p>• <strong>Note:</strong> {formData.message}</p>}
+                  </div>
+                  <div className="pt-2 flex flex-col gap-2">
+                    <a
+                      href={`mailto:noble.consultants@yahoo.com?subject=${encodeURIComponent(`New Consultation Request: ${formData.serviceNeeded} - ${formData.fullName}`)}&body=${encodeURIComponent(
+                        `New Consultation Request - Elimu Consultants\n` +
+                        `-----------------------------------------\n` +
+                        `Full Name: ${formData.fullName}\n` +
+                        `Email: ${formData.email}\n` +
+                        `Phone: ${formData.phone}\n` +
+                        `Service Needed: ${formData.serviceNeeded}\n` +
+                        `Message/Details: ${formData.message || 'None provided'}\n`
+                      )}`}
+                      className="w-full py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-xs rounded-lg transition-colors flex items-center justify-center gap-2"
+                    >
+                      <Mail className="w-4 h-4" /> Send Email via Mail Client to noble.consultants@yahoo.com
+                    </a>
                     <button
                       onClick={handleReset}
-                      className="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-lg transition-colors"
+                      className="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs rounded-lg transition-colors"
                     >
                       Done
                     </button>

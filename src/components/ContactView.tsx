@@ -39,6 +39,23 @@ export default function ContactView({ onOpenBooking }: ContactViewProps) {
     e.preventDefault();
     if (!validate()) return;
     setIsSuccess(true);
+
+    const recipient = 'noble.consultants@yahoo.com';
+    const subject = encodeURIComponent(`New Inquiry from ${formData.name}`);
+    const body = encodeURIComponent(
+      `New Website Inquiry - Elimu Consultants\n` +
+      `-----------------------------------------\n` +
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone || 'N/A'}\n` +
+      `Inquiry Message:\n${formData.message}\n`
+    );
+    const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    try {
+      window.location.href = mailtoUrl;
+    } catch (err) {
+      console.error('Could not auto-open mail client:', err);
+    }
   };
 
   const handleResetForm = () => {
